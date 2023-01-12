@@ -1,0 +1,157 @@
+/* CSS Reset */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    line-height: 1.5;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button {
+    font-family: inherit;
+}
+
+/* Variables */
+
+:root {
+    --clr-txt-main: #141414;
+    --clr-txt-content: #505050;
+    --clr-txt-footer: #d7d7d7;
+    --clr-txt-header: #ffffff;
+
+    --ff: 'Source Sans Pro', sans-serif;
+}
+
+/* Typography */
+
+body {
+    font-family: var(--ff);
+    color: var(--clr-txt-main);
+}
+
+.nav__title {
+    font-weight: 700;
+}
+
+.nav__links * {
+    color: inherit;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.hero {
+    color: var(--clr-txt-header);
+}
+
+.hero__date,
+.blog__date {
+    text-transform: uppercase;
+}
+
+.blog__description {
+    color: var(--clr-txt-content);
+}
+
+.footer {
+    color: var(--clr-txt-footer);
+}
+
+.footer__title {
+    font-weight: 700;
+}
+
+/* Layout */
+
+header {
+    margin-inline: 2em;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 0;
+}
+
+.nav__logo, 
+.nav__links {
+    display: flex;
+    align-items: center;
+    gap: 1em
+}
+
+.nav__links * {
+    list-style: none;
+    text-decoration: none;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 0.8em;
+    background: url(images/hero.jpg) rgb(83, 82, 82);;
+    background-size: cover;
+    background-blend-mode: multiply;
+    height: 50vh;
+    padding-bottom: 2em;
+    padding-inline: 2em;
+    margin-bottom: 3em;
+}
+
+.hero__date {
+    order: -1;
+}
+
+.blogs {
+    margin-inline: 2em;
+}
+
+.blog {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5em;
+    margin-bottom: 3em;
+}
+
+.blog__img {
+    order: 1;
+}
+
+.blog__title {
+    order: 3;
+}
+
+.blog__description {
+    order: 4;
+}
+
+.blog__date {
+    order: 2;
+}
+
+.footer {
+    background-color: var(--clr-txt-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2.5em 0;
+}
