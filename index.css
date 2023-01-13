@@ -59,13 +59,22 @@ body {
     color: var(--clr-txt-header);
 }
 
+.hero__title {
+    font-size: 5vw;
+}
+
 .hero__date,
-.blog__date {
+.blog__date,
+.post__date {
     text-transform: uppercase;
 }
 
 .blog__description {
     color: var(--clr-txt-content);
+}
+
+.blog__link {
+    color: inherit;
 }
 
 .footer {
@@ -76,10 +85,19 @@ body {
     font-weight: 700;
 }
 
+.post__title {
+    font-size: 2rem;
+}
+
+.recent-posts {
+    font-weight: 700;
+    text-align: center;
+}
+
 /* Layout */
 
-header {
-    margin-inline: 2em;
+.header {
+    margin-inline: 32px;
 }
 
 .nav {
@@ -108,10 +126,11 @@ header {
     gap: 0.8em;
     background: url(images/hero.jpg) rgb(83, 82, 82);;
     background-size: cover;
+    background-position: center;
     background-blend-mode: multiply;
     height: 50vh;
     padding-bottom: 2em;
-    padding-inline: 2em;
+    padding-inline: 32px;
     margin-bottom: 3em;
 }
 
@@ -120,7 +139,10 @@ header {
 }
 
 .blogs {
-    margin-inline: 2em;
+    margin-inline: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
 }
 
 .blog {
@@ -129,6 +151,10 @@ header {
     justify-content: center;
     gap: 0.5em;
     margin-bottom: 3em;
+    flex-basis: 350px;
+    flex-grow: 1;
+    max-width: 700px;
+    margin-inline: auto;
 }
 
 .blog__img {
@@ -147,6 +173,15 @@ header {
     order: 2;
 }
 
+.blog__link {
+    text-decoration: none;
+}
+
+.blog__link:hover,
+.blog__link:focus {
+    text-decoration: underline;
+}
+
 .footer {
     background-color: var(--clr-txt-main);
     display: flex;
@@ -154,4 +189,61 @@ header {
     align-items: center;
     flex-direction: column;
     padding: 2.5em 0;
+}
+
+.post {
+    margin-inline: 32px;
+}
+
+.post__intro {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-bottom: 2em;
+}
+
+.post__date {
+    order: -1;
+}
+
+.post__subtitle,
+.post__text,
+.img-container,
+.recent-posts {
+    margin-bottom: 1.5em;
+}
+
+@media (min-width: 800px) {
+    .header {
+        margin-inline: 60px;
+    }
+    .hero {
+        padding-top: 25em;
+        gap: 0;
+        padding-inline: 60px;
+    }
+    .hero__title,
+    .hero__description,
+    .hero__date {
+        max-width: 60%;
+    }
+    .img-container {
+        height: 600px;
+    }
+    .blogs {
+        margin-inline: 60px;
+    }
+    .post__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .post__intro,
+    .post__subtitle,
+    .post__text {
+        margin-inline: 60px;
+    }
+    .recent-posts {
+        font-size: 1.5rem;
+    }
 }
