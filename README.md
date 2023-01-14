@@ -4,6 +4,8 @@
 
 ## Preview
 
-
+![preview](/images/preview.jpg)
 
 ## Project walkthrough
+
+There are 2 main pages that can be navigated to, Home and About me. Additionally, blog post number 1 has a page that can open.
