@@ -36,6 +36,9 @@ button {
     --clr-txt-header: #ffffff;
 
     --ff: 'Source Sans Pro', sans-serif;
+
+    --space-inline-page-s: 32px;
+    --space-inline-page-l: 60px;
 }
 
 /* Typography */
@@ -85,7 +88,8 @@ body {
     font-weight: 700;
 }
 
-.post__title {
+.post__title,
+.about-me__title {
     font-size: 2rem;
 }
 
@@ -97,7 +101,7 @@ body {
 /* Layout */
 
 .header {
-    margin-inline: 32px;
+    margin-inline: var(--space-inline-page-s);
 }
 
 .nav {
@@ -130,7 +134,7 @@ body {
     background-blend-mode: multiply;
     height: 50vh;
     padding-bottom: 2em;
-    padding-inline: 32px;
+    padding-inline: var(--space-inline-page-s);
     margin-bottom: 3em;
 }
 
@@ -139,7 +143,7 @@ body {
 }
 
 .blogs {
-    margin-inline: 32px;
+    margin-inline: var(--space-inline-page-s);
     display: flex;
     flex-wrap: wrap;
     gap: 2em;
@@ -192,7 +196,7 @@ body {
 }
 
 .post {
-    margin-inline: 32px;
+    margin-inline: var(--space-inline-page-s);
 }
 
 .post__intro {
@@ -213,14 +217,40 @@ body {
     margin-bottom: 1.5em;
 }
 
+.about-me {
+    margin-inline: var(--space-inline-page-s);
+}
+
+.about-me__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    margin: 2em 0;
+}
+
+.about-me__img {
+    width: 150px;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    order: -1;
+    align-self: flex-start;
+}
+
+.about-me__subtitle,
+.about-me__text {
+    margin-bottom: 1.5em;
+}
+
 @media (min-width: 800px) {
     .header {
-        margin-inline: 60px;
+        margin-inline: var(--space-inline-page-l);
     }
     .hero {
         padding-top: 25em;
         gap: 0;
-        padding-inline: 60px;
+        padding-inline: var(--space-inline-page-l);
     }
     .hero__title,
     .hero__description,
@@ -231,7 +261,7 @@ body {
         height: 600px;
     }
     .blogs {
-        margin-inline: 60px;
+        margin-inline: var(--space-inline-page-l);
     }
     .post__img {
         width: 100%;
@@ -241,9 +271,16 @@ body {
     .post__intro,
     .post__subtitle,
     .post__text {
-        margin-inline: 60px;
+        margin-inline: var(--space-inline-page-l);
     }
     .recent-posts {
         font-size: 1.5rem;
+    }
+    .about-me__container {
+        flex-direction: row;
+    }
+    .about-me__subtitle,
+    .about-me__text {
+        margin-inline: var(--space-inline-page-l);
     }
 }
