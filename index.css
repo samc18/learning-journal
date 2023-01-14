@@ -41,6 +41,12 @@ button {
     --space-inline-page-l: 60px;
 }
 
+/* Utility Classes */
+
+.hidden {
+    display: none !important;
+}
+
 /* Typography */
 
 body {
@@ -78,6 +84,12 @@ body {
 
 .blog__link {
     color: inherit;
+}
+
+.btn {
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: center;
 }
 
 .footer {
@@ -184,6 +196,21 @@ body {
 .blog__link:hover,
 .blog__link:focus {
     text-decoration: underline;
+}
+
+.btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-bottom: 3em;
+    display: block;
+    margin-inline: auto;
+    transition: 200ms ease-in-out;
+}
+
+.btn:hover {
+    transform: scale(1.2);
 }
 
 .footer {
