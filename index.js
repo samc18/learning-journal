@@ -1,4 +1,6 @@
 const viewMoreBtn = document.querySelector('.btn')
+const menuBtn = document.querySelector('.fa-bars')
+const menu = document.querySelector('.menu')
 
 const hideElements = () => {
     const elementsToHide = document.querySelectorAll('.hide')
@@ -9,7 +11,7 @@ const hideElements = () => {
 }
 
 const displayElements = () => {
-    const elementsToDisplay = document.querySelectorAll('.hidden')
+    const elementsToDisplay = document.querySelectorAll('.hide')
     elementsToDisplay.forEach(element => {
         element.classList.remove('hidden')
     })
@@ -28,4 +30,30 @@ const changeBtnToShow = () => {
     viewMoreBtn.addEventListener('click', displayElements)
 }
 
-viewMoreBtn.addEventListener('click', displayElements)
+viewMoreBtn && viewMoreBtn.addEventListener('click', displayElements)
+
+const toggleMenu = () => {
+    menu.classList.toggle('hidden')
+    menuBtn.classList.toggle('fa-bars-active')
+}
+
+menuBtn.addEventListener('click', () => {
+    if (menu.classList.contains('hidden')) {
+        toggleMenu()
+    } else {
+        menu.setAttribute('closing', '')
+        menu.addEventListener('animationend', () => {
+            menu.removeAttribute('closing')
+            toggleMenu()
+        }, {once: true})
+    }
+})
+
+const hideMenu = () => {
+    if (window.innerWidth >= 800) {
+        menuBtn.classList.remove('fa-bars-active')
+        menu.classList.add('hidden')
+    }
+}
+
+window.addEventListener('resize', hideMenu)
